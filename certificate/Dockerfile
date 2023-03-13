@@ -9,5 +9,4 @@ RUN mkdir /etc/nginx/ssl
 RUN cp myhostname.crt /etc/nginx/ssl
 RUN cp /etc/ssl/private/myhostname.key /etc/nginx/ssl
 
-COPY addtodefault.conf addtodefault.conf
-RUN cat addtodefault.conf >> /etc/nginx/conf.d/default.conf
+COPY default.conf /etc/nginx/conf.d/default.conf

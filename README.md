@@ -5,6 +5,7 @@ This is a containerized web application with load balancing and HTTPS encryption
 > docker compose build  
 > docker compose up -d
 
+<a>http://localhost/</a>
 <a>https://localhost/</a>
 
 when you are done
