@@ -1,0 +1,22 @@
+version: '3.9'
+
+services:
+  web1:
+    image: nginx:latest
+    volumes:
+      - ./web1/index.html:/usr/share/nginx/html/index.html
+  web2:
+    image: nginx:latest
+    volumes:
+      - ./web2/index.html:/usr/share/nginx/html/index.html
+  loadbalancer:
+    image: haproxy:latest
+    volumes:
+      - ./LB:/usr/local/etc/haproxy:ro
+  cert:
+    build:
+      context: ./certificate
+    image: cert
+    ports:
+      - "443:443"
+  
